@@ -1,0 +1,3 @@
+
+//path to iplug folder
+IPLUG_PATH = $(SRCROOT)/../wdl/IPlug/
