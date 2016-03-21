@@ -1,4 +1,3 @@
-AutoTalent-MD changelog
-www.olilarkin.co.uk
+MultiBandDistortion changelog
 
-00/00/00 - v1.00 initial release
+03/14/16 - v1.00 initial release

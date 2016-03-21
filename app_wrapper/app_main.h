@@ -12,9 +12,9 @@
 
  App settings are stored in a .ini file. The location is as follows:
 
- Windows7: C:\Users\USERNAME\AppData\Local\AutoTalent-MD\settings.ini
- Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\AutoTalent-MD\settings.ini
- OSX: /Users/USERNAME/Library/Application\ Support/AutoTalent-MD/settings.ini
+ Windows7: C:\Users\USERNAME\AppData\Local\AutoTalentMD\settings.ini
+ Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\AutoTalentMD\settings.ini
+ OSX: /Users/USERNAME/Library/Application\ Support/AutoTalentMD/settings.ini
 
 */
 
@@ -44,7 +44,7 @@
 #include <string>
 #include <vector>
 
-#include "../AutoTalent-MD.h" // change this to match your iplug plugin .h file
+#include "../AutoTalentMD.h" // change this to match your iplug plugin .h file
 
 typedef unsigned short UInt16;
 
