@@ -24,6 +24,7 @@ enum EParams
   kA,
   kBb,
   kB,
+  kInfo,
   kNumParams
 };
 
@@ -37,7 +38,7 @@ enum ELayout
   kKnob3X = kKnob2X+90,
   kKnob4X = kKnob3X+90,
 
-  kKnobsY = 32,
+  kKnobsY = 37,
   
   kTitlesY = 17,
   kKnobFrames = 63
@@ -57,8 +58,8 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   // Define parameter ranges, display units, labels.
   //arguments are: name, defaultVal, minVal, maxVal, step, label
   GetParam(kMix)->InitDouble("Mix", 100., 0., 100., 0.01, "%");
-  GetParam(kShift)->InitDouble("Shift", 0.0, -12., 12., 0.01, "st");
-  GetParam(kTune)->InitDouble("Tune", 0.0, -1., 1., 0.01, "st");
+  GetParam(kShift)->InitDouble("Transpose", 0.0, -12., 12., 1., "st");
+  GetParam(kTune)->InitDouble("Fine Tune", 0.0, -1., 1., 0.01, "st");
   GetParam(kAmount)->InitDouble("Amount", 100., 0., 100., 0.01, "%");
   GetParam(kGlide)->InitDouble("Glide", 0.0, 0., 1000., 0.01, "ms");
   
@@ -75,6 +76,9 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   GetParam(kBb)->InitDouble("Bb", 100., 0., 100., 0.01, "%");
   GetParam(kB)->InitDouble("B", 100., 0., 100., 0.01, "%");
 
+  GetParam(kInfo)->InitBool("Info", false);
+  
+  
   IBitmap Knob = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, kKnobFrames);
   IBitmap Info = pGraphics->LoadIBitmap(INFO_ID, INFO_FN);
 
@@ -92,7 +96,7 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob3X, kKnobsY, kKnob3X+83, kKnobsY+90), kAmount, &Knob, &caption, true));
   pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob4X, kKnobsY, kKnob4X+83, kKnobsY+90), kGlide, &Knob, &caption, true));
   
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Shift"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Transpose"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Tune"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob3X, kTitlesY, kKnob3X+83, kKnobsY), &title, "Amount"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Glide"));
@@ -106,8 +110,8 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   //pGraphics->AttachControl(amountCaption);
  // pGraphics->AttachControl(glideCaption);
   
-  
-  pGraphics->AttachControl(new ITextControl(this, IRECT(180, 315, 220, 320), &caption, version));
+  IText versionText = IText(12, &LIGHTER_GRAY, "Futura");
+  pGraphics->AttachControl(new ITextControl(this, IRECT(170, 312, 220, 320), &versionText, version));
 
   AttachGraphics(pGraphics);
   
