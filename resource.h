@@ -57,11 +57,13 @@ instrument determined by PLUG _IS _INST
 #define BACKGROUND_ID 101
 #define KNOB_ID 102
 #define INFO_ID 103
+#define KNOBSTEPPED_ID 104
 
 // Image resource locations for this plug.
 #define BACKGROUND_FN "resources/img/Background.png"
 #define KNOB_FN "resources/img/Knob.png"
 #define INFO_FN "resources/img/Info.png"
+#define KNOBSTEPPED_FN "resources/img/KnobStepped.png"
 
 // GUI default dimensions
 #define GUI_WIDTH 420

@@ -1,0 +1,1 @@
+/Applications/AutoTalentMD.app
