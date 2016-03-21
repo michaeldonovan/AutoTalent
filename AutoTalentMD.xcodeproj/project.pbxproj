@@ -58,16 +58,6 @@
 		4C0370F51C850B6D00C33BB8 /* VAStateVariableFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C0370D61C850B6D00C33BB8 /* VAStateVariableFilter.cpp */; };
 		4C0370F61C850B6D00C33BB8 /* VAStateVariableFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0370D71C850B6D00C33BB8 /* VAStateVariableFilter.h */; };
 		4C0370F71C850B6D00C33BB8 /* VAStateVariableFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0370D71C850B6D00C33BB8 /* VAStateVariableFilter.h */; };
-		4C367BA91CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BAA1CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BAB1CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BAC1CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BAD1CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BAE1CA0A23500DD841B /* KnobStepped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C367BA81CA0A23500DD841B /* KnobStepped.png */; };
-		4C367BB21CA0A3A300DD841B /* IPlugMultiTargets_controls.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C367BB11CA0A3A300DD841B /* IPlugMultiTargets_controls.h */; };
-		4C367BB31CA0A3A300DD841B /* IPlugMultiTargets_controls.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C367BB11CA0A3A300DD841B /* IPlugMultiTargets_controls.h */; };
-		4C367BB51CA0A9A400DD841B /* IKnobMultiControlText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C367BB41CA0A9A400DD841B /* IKnobMultiControlText.h */; };
-		4C367BB61CA0A9A400DD841B /* IKnobMultiControlText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C367BB41CA0A9A400DD841B /* IKnobMultiControlText.h */; };
 		4C3DCC901C915A7B005CE3B6 /* CFxRbjFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */; };
 		4C3DCC911C915A7B005CE3B6 /* CFxRbjFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */; };
 		4CA0CD8F1C920ABF0049DED5 /* besselfilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */; };
@@ -522,9 +512,6 @@
 		4C0370D61C850B6D00C33BB8 /* VAStateVariableFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VAStateVariableFilter.cpp; sourceTree = "<group>"; };
 		4C0370D71C850B6D00C33BB8 /* VAStateVariableFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAStateVariableFilter.h; sourceTree = "<group>"; };
 		4C33ECC81C9114C700356673 /* LinkwitzRiley.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkwitzRiley.h; sourceTree = "<group>"; };
-		4C367BA81CA0A23500DD841B /* KnobStepped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KnobStepped.png; path = resources/img/KnobStepped.png; sourceTree = "<group>"; };
-		4C367BB11CA0A3A300DD841B /* IPlugMultiTargets_controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPlugMultiTargets_controls.h; sourceTree = "<group>"; };
-		4C367BB41CA0A9A400DD841B /* IKnobMultiControlText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKnobMultiControlText.h; sourceTree = "<group>"; };
 		4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFxRbjFilter.h; sourceTree = "<group>"; };
 		4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = besselfilter.cpp; sourceTree = "<group>"; };
 		4CB19A711C8E7FB500A12761 /* IPopupMenuControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPopupMenuControl.h; sourceTree = "<group>"; };
@@ -836,12 +823,10 @@
 				52FBBED20D0CF13D001C8B8A /* AutoTalentMD.h */,
 				52FBBED00D0CF139001C8B8A /* AutoTalentMD.cpp */,
 				4CFEB6151CA0782C00412D73 /* fftsetup.h */,
-				4C367BB41CA0A9A400DD841B /* IKnobMultiControlText.h */,
 				4CFEB6161CA0782C00412D73 /* mayer_fft.c */,
 				4CFEB62A1CA0844C00412D73 /* IKnobLabelControl.h */,
 				4CFEB6171CA0782C00412D73 /* mayer_fft.h */,
 				4CB19A711C8E7FB500A12761 /* IPopupMenuControl.h */,
-				4C367BB11CA0A3A300DD841B /* IPlugMultiTargets_controls.h */,
 				4C0370CF1C850B3800C33BB8 /* Helpful Utilities */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				32C88E010371C26100C91783 /* Other Sources */,
@@ -1387,7 +1372,6 @@
 				4CFEB5FC1CA074A900412D73 /* Background.png */,
 				4CFEB5FD1CA074A900412D73 /* Info.png */,
 				4CFEB5FE1CA074A900412D73 /* Knob.png */,
-				4C367BA81CA0A23500DD841B /* KnobStepped.png */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -1480,7 +1464,6 @@
 				4FD16D2413B6351C001D0217 /* swell-functions.h in Headers */,
 				4FD16D2D13B6353C001D0217 /* swell-internal.h in Headers */,
 				4FD16D3213B6355A001D0217 /* swell-types.h in Headers */,
-				4C367BB31CA0A3A300DD841B /* IPlugMultiTargets_controls.h in Headers */,
 				4F78D8D913B63B5D0032E0F3 /* aeffect.h in Headers */,
 				4F78D8DA13B63B5D0032E0F3 /* aeffectx.h in Headers */,
 				4FF0171A134E153A001447BA /* heapbuf.h in Headers */,
@@ -1512,7 +1495,6 @@
 				4C0370F71C850B6D00C33BB8 /* VAStateVariableFilter.h in Headers */,
 				4F78DA0713B63CD90032E0F3 /* IPlugAU.h in Headers */,
 				4F3EE94913B65A350097B791 /* IPlugOSDetect.h in Headers */,
-				4C367BB61CA0A9A400DD841B /* IKnobMultiControlText.h in Headers */,
 				4FDA440913F3E4F2000B4551 /* IBitmapMonoText.h in Headers */,
 				4FA88B931444E4C4006CB8DA /* dfx-au-utilities.h in Headers */,
 			);
@@ -1538,13 +1520,11 @@
 				4F78DA8B13B640050032E0F3 /* ptrlist.h in Headers */,
 				4F78DA8C13B640050032E0F3 /* wdlstring.h in Headers */,
 				4CED85901C8E056C00B832EF /* denormal.h in Headers */,
-				4C367BB51CA0A9A400DD841B /* IKnobMultiControlText.h in Headers */,
 				4F78DA8D13B640050032E0F3 /* heapbuf.h in Headers */,
 				4F78DA8E13B640050032E0F3 /* wdlendian.h in Headers */,
 				4F78DA8F13B640050032E0F3 /* swell.h in Headers */,
 				4F78DA9013B640050032E0F3 /* swell-functions.h in Headers */,
 				4F78DA9113B640050032E0F3 /* swell-internal.h in Headers */,
-				4C367BB21CA0A3A300DD841B /* IPlugMultiTargets_controls.h in Headers */,
 				4F78DA9213B640050032E0F3 /* swell-types.h in Headers */,
 				4F78DA9313B640050032E0F3 /* aeffect.h in Headers */,
 				4F78DA9413B640050032E0F3 /* aeffectx.h in Headers */,
@@ -1809,7 +1789,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6061CA074A900412D73 /* Info.png in Resources */,
-				4C367BAA1CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4CFEB6001CA074A900412D73 /* Background.png in Resources */,
 				4CFEB60C1CA074A900412D73 /* Knob.png in Resources */,
 			);
@@ -1820,7 +1799,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6081CA074A900412D73 /* Info.png in Resources */,
-				4C367BAC1CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4CFEB6021CA074A900412D73 /* Background.png in Resources */,
 				4CFEB60E1CA074A900412D73 /* Knob.png in Resources */,
 			);
@@ -1831,7 +1809,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6031CA074A900412D73 /* Background.png in Resources */,
-				4C367BAD1CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4CFEB6091CA074A900412D73 /* Info.png in Resources */,
 				4CFEB60F1CA074A900412D73 /* Knob.png in Resources */,
 			);
@@ -1842,7 +1819,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6071CA074A900412D73 /* Info.png in Resources */,
-				4C367BAB1CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4CFEB6011CA074A900412D73 /* Background.png in Resources */,
 				4CFEB60D1CA074A900412D73 /* Knob.png in Resources */,
 			);
@@ -1853,7 +1829,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6041CA074A900412D73 /* Background.png in Resources */,
-				4C367BAE1CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4CFEB60A1CA074A900412D73 /* Info.png in Resources */,
 				4CFEB6101CA074A900412D73 /* Knob.png in Resources */,
 			);
@@ -1867,7 +1842,6 @@
 				4CFEB60B1CA074A900412D73 /* Knob.png in Resources */,
 				4CFEB6051CA074A900412D73 /* Info.png in Resources */,
 				4F78D88613B6382B0032E0F3 /* AutoTalentMD.icns in Resources */,
-				4C367BA91CA0A23500DD841B /* KnobStepped.png in Resources */,
 				4F78D89913B639100032E0F3 /* InfoPlist.strings in Resources */,
 				4F78D89A13B639100032E0F3 /* MainMenu.xib in Resources */,
 			);

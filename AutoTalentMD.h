@@ -8,7 +8,6 @@
 #include "IKnobLabelControl.h"
 #include "mayer_fft.c"
 #include "fftsetup.h"
-#include "IKnobMultiControlText.h"
 
 #define L2SC (float)3.32192809488736218171
 
@@ -29,7 +28,7 @@ public:
   
 private:
   //////////////////////////////////
-  char* version = "v1.0.0";
+  char* version = "1.0.0";
   //////////////////////////////////
   
   
@@ -44,7 +43,7 @@ private:
   IColor DARK_GRAY = IColor(255,50,50,50);
   IColor LIGHT_GRAY = IColor(255,70,70,70);
   IColor MID_GRAY = IColor(255,60,60,60);
-  IColor LIGHTER_GRAY = IColor(255,200,200,200);
+  IColor LIGHTER_GRAY = IColor(255,128,128,128);
   IColor LIGHT_ORANGE = IColor(255,245,187,0);
   IColor DARK_ORANGE = IColor(255,236,159,5);
   IColor TRANSP_ORANGE = IColor(255,245*.22,187*.22,0);

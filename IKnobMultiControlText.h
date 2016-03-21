@@ -10,6 +10,7 @@
 #define IKnobMultiControlText_h
 
 #include "IControl.h"
+#include <string>
 
 class IKnobMultiControlText : public IKnobControl
 {
@@ -39,7 +40,9 @@ public:
         
         char disp[20];
         mPlug->GetParam(mParamIdx)->GetDisplayForHost(disp);
+        
         std::string str(disp);
+        
         if (CSTR_NOT_EMPTY(disp))
         {
             if (mShowParamLabel)

@@ -37,10 +37,9 @@ enum ELayout
   kKnob3X = kKnob2X+90,
   kKnob4X = kKnob3X+90,
 
-  kKnobsY = 34,
+  kKnobsY = 32,
   
   kTitlesY = 17,
-  kKnobSteppedFrames = 25,
   kKnobFrames = 63
 };
 
@@ -58,8 +57,8 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   // Define parameter ranges, display units, labels.
   //arguments are: name, defaultVal, minVal, maxVal, step, label
   GetParam(kMix)->InitDouble("Mix", 100., 0., 100., 0.01, "%");
-  GetParam(kShift)->InitInt("Transpose", 0, -12, 12, "st");
-  GetParam(kTune)->InitDouble("Fine Tune", 0.0, -1., 1., 0.01, "st");
+  GetParam(kShift)->InitDouble("Shift", 0.0, -12., 12., 0.01, "st");
+  GetParam(kTune)->InitDouble("Tune", 0.0, -1., 1., 0.01, "st");
   GetParam(kAmount)->InitDouble("Amount", 100., 0., 100., 0.01, "%");
   GetParam(kGlide)->InitDouble("Glide", 0.0, 0., 1000., 0.01, "ms");
   
@@ -78,36 +77,34 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
 
   IBitmap Knob = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, kKnobFrames);
   IBitmap Info = pGraphics->LoadIBitmap(INFO_ID, INFO_FN);
-  IBitmap KnobStepped = pGraphics->LoadIBitmap(KNOBSTEPPED_ID, KNOBSTEPPED_FN, kKnobSteppedFrames);
-  
+
   pGraphics->AttachBackground(BACKGROUND_ID, BACKGROUND_FN);
 
   IText caption = IText(14, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
   IText title = IText(20, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  pGraphics->AttachControl(new IKnobMultiControl(this, kKnob1X, kKnobsY, kShift, &Knob));
+  pGraphics->AttachControl(new IKnobMultiControl(this, kKnob2X, kKnobsY, kTune, &Knob));
+  pGraphics->AttachControl(new IKnobMultiControl(this, kKnob3X, kKnobsY, kAmount, &Knob));
+  pGraphics->AttachControl(new IKnobMultiControl(this, kKnob4X, kKnobsY, kGlide, &Knob));
   
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob1X, kKnobsY, kKnob1X+83, kKnobsY+90), kShift, &KnobStepped, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob2X, kKnobsY, kKnob2X+83, kKnobsY+90), kTune, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob3X, kKnobsY, kKnob3X+83, kKnobsY+90), kAmount, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob4X, kKnobsY, kKnob4X+83, kKnobsY+90), kGlide, &Knob, &caption, true));
   
-  
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Transpose"));
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Fine"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Shift"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Tune"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob3X, kTitlesY, kKnob3X+83, kKnobsY), &title, "Amount"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Glide"));
 
-  //shiftCaption = new ICaptionControl(this, IRECT(kKnob1X, kKnobsY+72, kKnob1X+83, kKnobsY+82), kShift, &caption, true);
- // tuneCaption = new ICaptionControl(this, IRECT(kKnob2X, kKnobsY+72, kKnob2X+83, kKnobsY+82), kTune, &caption, true);
- // amountCaption = new ICaptionControl(this, IRECT(kKnob3X, kKnobsY+72, kKnob3X+83, kKnobsY+82), kAmount, &caption, true);
- // glideCaption = new ICaptionControl(this, IRECT(kKnob4X, kKnobsY+72, kKnob4X+83, kKnobsY+82), kGlide, &caption, true);
-  //pGraphics->AttachControl(shiftCaption);
- // pGraphics->AttachControl(tuneCaption);
-//  pGraphics->AttachControl(amountCaption);
-//  pGraphics->AttachControl(glideCaption);
+  shiftCaption = new ICaptionControl(this, IRECT(kKnob1X, kKnobsY+70, kKnob1X+83, kKnobsY+80), kShift, &caption, true);
+  tuneCaption = new ICaptionControl(this, IRECT(kKnob2X, kKnobsY+70, kKnob2X+83, kKnobsY+80), kTune, &caption, true);
+  amountCaption = new ICaptionControl(this, IRECT(kKnob3X, kKnobsY+70, kKnob3X+83, kKnobsY+80), kAmount, &caption, true);
+  glideCaption = new ICaptionControl(this, IRECT(kKnob4X, kKnobsY+70, kKnob4X+83, kKnobsY+80), kGlide, &caption, true);
+  pGraphics->AttachControl(shiftCaption);
+  pGraphics->AttachControl(tuneCaption);
+  pGraphics->AttachControl(amountCaption);
+  pGraphics->AttachControl(glideCaption);
   
-  IText versionText = IText(12, &LIGHTER_GRAY, "Futura", IText::kStyleNormal, IText::kAlignCenter);
-  pGraphics->AttachControl(new ITextControl(this, IRECT(175, 313, 215, 310), &versionText, version));
   
+  pGraphics->AttachControl(new ITextControl(this, IRECT(180, 315, 220, 320), &caption, version));
+
   AttachGraphics(pGraphics);
   
   
