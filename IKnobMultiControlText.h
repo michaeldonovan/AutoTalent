@@ -25,7 +25,7 @@ public:
         mText = *pText;
         mTextRECT = IRECT(mRECT.L, mRECT.B-20, mRECT.R, mRECT.B);
         mImgRECT = IRECT(mRECT.L, mRECT.T, &mBitmap);
-        mInputRECT = IRECT(mTextRECT.L+25, mTextRECT.T, mTextRECT.R-25, mTextRECT.B);
+        mInputRECT = IRECT(mTextRECT.L+15, mTextRECT.T, mTextRECT.R-15, mTextRECT.B);
         mDisablePrompt = false;
     }
     

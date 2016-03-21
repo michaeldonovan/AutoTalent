@@ -60,6 +60,8 @@
 		4C0370F71C850B6D00C33BB8 /* VAStateVariableFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0370D71C850B6D00C33BB8 /* VAStateVariableFilter.h */; };
 		4C3DCC901C915A7B005CE3B6 /* CFxRbjFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */; };
 		4C3DCC911C915A7B005CE3B6 /* CFxRbjFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */; };
+		4C919DDE1CA0B88D00DD8E6A /* IKnobMultiControlText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C919DDD1CA0B88D00DD8E6A /* IKnobMultiControlText.h */; };
+		4C919DDF1CA0B88D00DD8E6A /* IKnobMultiControlText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C919DDD1CA0B88D00DD8E6A /* IKnobMultiControlText.h */; };
 		4CA0CD8F1C920ABF0049DED5 /* besselfilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */; };
 		4CA0CD901C920ABF0049DED5 /* besselfilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */; };
 		4CA0CD911C920ABF0049DED5 /* besselfilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */; };
@@ -513,6 +515,7 @@
 		4C0370D71C850B6D00C33BB8 /* VAStateVariableFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAStateVariableFilter.h; sourceTree = "<group>"; };
 		4C33ECC81C9114C700356673 /* LinkwitzRiley.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkwitzRiley.h; sourceTree = "<group>"; };
 		4C3DCC8F1C915A7B005CE3B6 /* CFxRbjFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFxRbjFilter.h; sourceTree = "<group>"; };
+		4C919DDD1CA0B88D00DD8E6A /* IKnobMultiControlText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKnobMultiControlText.h; sourceTree = "<group>"; };
 		4CA0CD8D1C920ABF0049DED5 /* besselfilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = besselfilter.cpp; sourceTree = "<group>"; };
 		4CB19A711C8E7FB500A12761 /* IPopupMenuControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPopupMenuControl.h; sourceTree = "<group>"; };
 		4CB19A881C8F776400A12761 /* RMS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMS.h; sourceTree = "<group>"; };
@@ -822,6 +825,7 @@
 				52FBBED30D0CF143001C8B8A /* resource.h */,
 				52FBBED20D0CF13D001C8B8A /* AutoTalentMD.h */,
 				52FBBED00D0CF139001C8B8A /* AutoTalentMD.cpp */,
+				4C919DDD1CA0B88D00DD8E6A /* IKnobMultiControlText.h */,
 				4CFEB6151CA0782C00412D73 /* fftsetup.h */,
 				4CFEB6161CA0782C00412D73 /* mayer_fft.c */,
 				4CFEB62A1CA0844C00412D73 /* IKnobLabelControl.h */,
@@ -1496,6 +1500,7 @@
 				4F78DA0713B63CD90032E0F3 /* IPlugAU.h in Headers */,
 				4F3EE94913B65A350097B791 /* IPlugOSDetect.h in Headers */,
 				4FDA440913F3E4F2000B4551 /* IBitmapMonoText.h in Headers */,
+				4C919DDF1CA0B88D00DD8E6A /* IKnobMultiControlText.h in Headers */,
 				4FA88B931444E4C4006CB8DA /* dfx-au-utilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1547,6 +1552,7 @@
 				4F78DAA413B640050032E0F3 /* IMidiQueue.h in Headers */,
 				4C0370EE1C850B6D00C33BB8 /* PeakFollower.h in Headers */,
 				4F78DAA513B640050032E0F3 /* IGraphicsCarbon.h in Headers */,
+				4C919DDE1CA0B88D00DD8E6A /* IKnobMultiControlText.h in Headers */,
 				4C0370F61C850B6D00C33BB8 /* VAStateVariableFilter.h in Headers */,
 				4F78DAA613B640050032E0F3 /* IGraphics.h in Headers */,
 				4C3DCC901C915A7B005CE3B6 /* CFxRbjFilter.h in Headers */,

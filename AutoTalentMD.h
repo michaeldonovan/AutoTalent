@@ -8,6 +8,7 @@
 #include "IKnobLabelControl.h"
 #include "mayer_fft.c"
 #include "fftsetup.h"
+#include "IKnobMultiControlText.h"
 
 #define L2SC (float)3.32192809488736218171
 
