@@ -9,6 +9,7 @@
 #include "mayer_fft.c"
 #include "fftsetup.h"
 #include "IKnobMultiControlText.h"
+#include "Scales.h"
 
 #define L2SC (float)3.32192809488736218171
 
@@ -32,13 +33,12 @@ private:
   char* version = "v1.0.0";
   //////////////////////////////////
   
+  //Functions
+  void SetScale();
   
-  //Captions/Controls
-  ICaptionControl* shiftCaption;
-  ICaptionControl* tuneCaption;
-  ICaptionControl* amountCaption;
-  ICaptionControl* glideCaption;
-
+  //Controls
+  IPopUpMenuControl* mRootControl;
+  IPopUpMenuControl* mScaleControl;
   
   //Set Colors
   IColor DARK_GRAY = IColor(255,50,50,50);
@@ -49,28 +49,34 @@ private:
   IColor DARK_ORANGE = IColor(255,236,159,5);
   IColor TRANSP_ORANGE = IColor(255,245*.22,187*.22,0);
   
+  ISwitchControl* Keys[12];
+  
+  bool scales[8][12];
+  
   // parameters
   
   float fMix;
   float fShift;
   float fTune;
-  float fA;
-  float fBb;
-  float fB;
-  float fC;
-  float fDb;
-  float fD;
-  float fEb;
-  float fE;
-  float fF;
-  float fGb;
-  float fG;
-  float fAb;
+//  float fA;
+//  float fBb;
+//  float fB;
+//  float fC;
+//  float fDb;
+//  float fD;
+//  float fEb;
+//  float fE;
+//  float fF;
+//  float fGb;
+//  float fG;
+//  float fAb;
+  float fNotes[12];
   float fAmount;
   float fGlide;
   
   fft_vars* fmembvars; // member variables for fft routine
   
+  IScales mScales;
   
   unsigned long cbsize; // size of circular buffer
   unsigned long corrsize; // cbsize/2 + 1
@@ -119,6 +125,7 @@ private:
   float* frag; // windowed fragment of speech
   unsigned long fragsize; // size of fragment in samples	
 
+  
 
 };
 

@@ -15,7 +15,7 @@
 class IKnobMultiControlText : public IKnobControl
 {
 private:
-    IRECT mTextRECT, mImgRECT, mInputRECT;
+    IRECT mTextRECT, mImgRECT;
     IBitmap mBitmap;
     bool mShowParamLabel;
 public:
@@ -25,7 +25,6 @@ public:
         mText = *pText;
         mTextRECT = IRECT(mRECT.L, mRECT.B-20, mRECT.R, mRECT.B);
         mImgRECT = IRECT(mRECT.L, mRECT.T, &mBitmap);
-        mInputRECT = IRECT(mTextRECT.L+15, mTextRECT.T, mTextRECT.R-15, mTextRECT.B);
         mDisablePrompt = false;
     }
     
@@ -58,7 +57,7 @@ public:
     
     void OnMouseDown(int x, int y, IMouseMod* pMod)
     {
-        if (mTextRECT.Contains(x, y)) PromptUserInput(&mInputRECT);
+        if (mTextRECT.Contains(x, y)) PromptUserInput(&mTextRECT);
 #ifdef RTAS_API
         else if (pMod->A)
         {

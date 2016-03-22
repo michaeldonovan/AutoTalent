@@ -6,7 +6,7 @@
 class IPopUpMenuControl : public IControl
 {
 public:
-    IPopUpMenuControl(IPlugBase *pPlug, IRECT pR, IColor cBG, IColor cFG, int paramIdx)
+    IPopUpMenuControl(IPlugBase *pPlug, IRECT pR, IColor cBG, IColor cFG , int paramIdx)
     : IControl(pPlug, pR, paramIdx)
     {
         mDisablePrompt = false;

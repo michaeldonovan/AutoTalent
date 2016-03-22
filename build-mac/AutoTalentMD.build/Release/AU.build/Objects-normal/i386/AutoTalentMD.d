@@ -36,4 +36,5 @@ dependencies: \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent-MD/fftsetup.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent-MD/mayer_fft.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent-MD/IKnobMultiControlText.h \
+  /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent-MD/Scales.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent-MD/../../WDL/IPlug/IPlug_include_in_plug_src.h

@@ -57,15 +57,31 @@ instrument determined by PLUG _IS _INST
 #define BACKGROUND_ID 101
 #define KNOB_ID 102
 #define INFO_ID 103
+#define KEYC_ID 104
+#define KEYD_ID 105
+#define KEYE_ID 106
+#define KEYF_ID 107
+#define KEYG_ID 108
+#define KEYA_ID 109
+#define KEYB_ID 110
+#define KEYBLACK_ID 111
 
 // Image resource locations for this plug.
 #define BACKGROUND_FN "resources/img/Background.png"
 #define KNOB_FN "resources/img/Knob.png"
 #define INFO_FN "resources/img/Info.png"
+#define KEYC_FN "resources/img/Keyboard_01.png"
+#define KEYD_FN "resources/img/Keyboard_02.png"
+#define KEYE_FN "resources/img/Keyboard_03.png"
+#define KEYF_FN "resources/img/Keyboard_04.png"
+#define KEYG_FN "resources/img/Keyboard_05.png"
+#define KEYA_FN "resources/img/Keyboard_06.png"
+#define KEYB_FN "resources/img/Keyboard_07.png"
+#define KEYBLACK_FN "resources/img/BlackKey.png"
 
 // GUI default dimensions
 #define GUI_WIDTH 420
-#define GUI_HEIGHT 340
+#define GUI_HEIGHT 360
 
 // on MSVC, you must define SA_API in the resource editor preprocessor macros as well as the c++ ones
 #if defined(SA_API) && !defined(OS_IOS)

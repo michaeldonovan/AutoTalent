@@ -25,6 +25,8 @@ enum EParams
   kBb,
   kB,
   kInfo,
+  kScale,
+  kRoot,
   kNumParams
 };
 
@@ -32,34 +34,38 @@ enum ELayout
 {
   kWidth = GUI_WIDTH,
   kHeight = GUI_HEIGHT,
-
+  
   kKnob1X = 30,
   kKnob2X = kKnob1X+90,
   kKnob3X = kKnob2X+90,
   kKnob4X = kKnob3X+90,
-
+  
   kKnobsY = 37,
+  
+  kKeyboardX = 76,
+  kKeyboardY = 166,
+  kKeyboardSpacingW = 39,
+  kKeyboardSpacingB = 26,
   
   kTitlesY = 17,
   kKnobFrames = 63
 };
 
 AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
-  IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
+IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
   TRACE;
-    //======================================================================================================
+  //======================================================================================================
   
   init(fs);
   
   IGraphics* pGraphics = MakeGraphics(this, kWidth, kHeight);
-
   
   // Define parameter ranges, display units, labels.
   //arguments are: name, defaultVal, minVal, maxVal, step, label
   GetParam(kMix)->InitDouble("Mix", 100., 0., 100., 0.01, "%");
   GetParam(kShift)->InitDouble("Transpose", 0.0, -12., 12., 1., "st");
-  GetParam(kTune)->InitDouble("Fine Tune", 0.0, -1., 1., 0.01, "st");
+  GetParam(kTune)->InitDouble("Fine Tune", 0.0, -100., 100., 1, "ct");
   GetParam(kAmount)->InitDouble("Amount", 100., 0., 100., 0.01, "%");
   GetParam(kGlide)->InitDouble("Glide", 0.0, 0., 1000., 0.01, "ms");
   
@@ -75,17 +81,87 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   GetParam(kA)->InitDouble("A", 100., 0., 100., 0.01, "%");
   GetParam(kBb)->InitDouble("Bb", 100., 0., 100., 0.01, "%");
   GetParam(kB)->InitDouble("B", 100., 0., 100., 0.01, "%");
-
+  
   GetParam(kInfo)->InitBool("Info", false);
   
+  GetParam(kRoot)->InitEnum("Root", 0, 12);
+  GetParam(kRoot)->SetDisplayText(0, "C");
+  GetParam(kRoot)->SetDisplayText(1, "Db");
+  GetParam(kRoot)->SetDisplayText(2, "D");
+  GetParam(kRoot)->SetDisplayText(3, "Eb");
+  GetParam(kRoot)->SetDisplayText(4, "E");
+  GetParam(kRoot)->SetDisplayText(5, "F");
+  GetParam(kRoot)->SetDisplayText(6, "Gb");
+  GetParam(kRoot)->SetDisplayText(7, "G");
+  GetParam(kRoot)->SetDisplayText(8, "Ab");
+  GetParam(kRoot)->SetDisplayText(9, "A");
+  GetParam(kRoot)->SetDisplayText(10, "Bb");
+  GetParam(kRoot)->SetDisplayText(11, "B");
+  
+  GetParam(kScale)->InitEnum("Scale", 0, 13);
+  GetParam(kScale)->SetDisplayText(0, "Chromatic");
+  GetParam(kScale)->SetDisplayText(1, "Major");
+  GetParam(kScale)->SetDisplayText(2, "Minor");
+  GetParam(kScale)->SetDisplayText(3, "Dorian");
+  GetParam(kScale)->SetDisplayText(4, "Mixolydian");
+  GetParam(kScale)->SetDisplayText(5, "Lydian");
+  GetParam(kScale)->SetDisplayText(6, "Phrygian");
+  GetParam(kScale)->SetDisplayText(7, "Locrian");
+  GetParam(kScale)->SetDisplayText(8, "Harm Minor");
+  GetParam(kScale)->SetDisplayText(9, "Mel Minor");
+  GetParam(kScale)->SetDisplayText(10, "Maj Pentatonic");
+  GetParam(kScale)->SetDisplayText(11, "Min Pentatonic");
+  GetParam(kScale)->SetDisplayText(12, "Minor Blues");
+
+  GetParam(kScale)->SetIsMeta(true);
+  GetParam(kRoot)->SetIsMeta(true);
+  
+  mRootControl = new IPopUpMenuControl(this, IRECT(116, 137, 149, 155), LIGHT_GRAY, COLOR_WHITE,  kRoot);
+  
+  mScaleControl = new IPopUpMenuControl(this, IRECT(205, 137, 290, 155), LIGHT_GRAY, COLOR_WHITE, kScale);
+  
+  pGraphics->AttachControl(mRootControl);
+  pGraphics->AttachControl(mScaleControl);
   
   IBitmap Knob = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, kKnobFrames);
   IBitmap Info = pGraphics->LoadIBitmap(INFO_ID, INFO_FN);
-
+  IBitmap KeyC = pGraphics->LoadIBitmap(KEYC_ID, KEYC_FN, 2);
+  IBitmap KeyD = pGraphics->LoadIBitmap(KEYD_ID, KEYD_FN, 2);
+  IBitmap KeyE = pGraphics->LoadIBitmap(KEYE_ID, KEYE_FN, 2);
+  IBitmap KeyF = pGraphics->LoadIBitmap(KEYF_ID, KEYF_FN, 2);
+  IBitmap KeyG = pGraphics->LoadIBitmap(KEYG_ID, KEYG_FN, 2);
+  IBitmap KeyA = pGraphics->LoadIBitmap(KEYA_ID, KEYA_FN, 2);
+  IBitmap KeyB = pGraphics->LoadIBitmap(KEYB_ID, KEYB_FN, 2);
+  IBitmap KeyBlack = pGraphics->LoadIBitmap(KEYBLACK_ID, KEYBLACK_FN, 2);
+  
+  Keys[0] = new ISwitchControl(this, kKeyboardX, kKeyboardY, kC, &KeyC);
+  Keys[1] = new ISwitchControl(this, kKeyboardX + kKeyboardSpacingB, kKeyboardY, kDb, &KeyBlack);
+  Keys[2] = new ISwitchControl(this, kKeyboardX + kKeyboardSpacingW, kKeyboardY, kD, &KeyD);
+  Keys[3] = new ISwitchControl(this, kKeyboardX + kKeyboardSpacingW + kKeyboardSpacingB, kKeyboardY, kEb, &KeyBlack);
+  Keys[4] = new ISwitchControl(this, kKeyboardX + 2 * kKeyboardSpacingW, kKeyboardY, kE, &KeyE);
+  Keys[5] = new ISwitchControl(this, kKeyboardX + 3 * kKeyboardSpacingW, kKeyboardY, kF, &KeyF);
+  Keys[6] = new ISwitchControl(this, kKeyboardX + 3 * kKeyboardSpacingW + kKeyboardSpacingB, kKeyboardY, kGb, &KeyBlack);
+  Keys[7] = new ISwitchControl(this, kKeyboardX + 4 * kKeyboardSpacingW, kKeyboardY, kG, &KeyG);
+  Keys[8] = new ISwitchControl(this, kKeyboardX + 4 * kKeyboardSpacingW + kKeyboardSpacingB, kKeyboardY, kAb, &KeyBlack);
+  Keys[9] = new ISwitchControl(this, kKeyboardX + 5 * kKeyboardSpacingW, kKeyboardY, kA, &KeyA);
+  Keys[10] = new ISwitchControl(this, kKeyboardX + 5 * kKeyboardSpacingW + kKeyboardSpacingB, kKeyboardY, kBb, &KeyBlack);
+  Keys[11] = new ISwitchControl(this, kKeyboardX + 6 * kKeyboardSpacingW, kKeyboardY, kB, &KeyB);
+  
+  for (int i=0; i<12; i++) {
+    pGraphics->AttachControl(Keys[i]);
+  }
+  
   pGraphics->AttachBackground(BACKGROUND_ID, BACKGROUND_FN);
-
-  IText caption = IText(14, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  
+  IText caption = IText(17, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
   IText title = IText(20, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  
+  
+  pGraphics->AttachControl(new ITextControl(this, IRECT(89, 137, 99, 154), &caption, "Root:"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(172, 137, 192, 154), &caption, "Scale:"));
+  
+  
+  
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob1X, kKnobsY, kShift, &Knob));
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob2X, kKnobsY, kTune, &Knob));
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob3X, kKnobsY, kAmount, &Knob));
@@ -93,31 +169,23 @@ AutoTalentMD::AutoTalentMD(IPlugInstanceInfo instanceInfo):
   
   pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob1X, kKnobsY, kKnob1X+83, kKnobsY+90), kShift, &Knob, &caption, true));
   pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob2X, kKnobsY, kKnob2X+83, kKnobsY+90), kTune, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob3X, kKnobsY, kKnob3X+83, kKnobsY+90), kAmount, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob4X, kKnobsY, kKnob4X+83, kKnobsY+90), kGlide, &Knob, &caption, true));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob3X, kKnobsY, kKnob3X+83, kKnobsY+90), kGlide, &Knob, &caption, true));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob4X, kKnobsY, kKnob4X+83, kKnobsY+90), kAmount, &Knob, &caption, true));
   
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Transpose"));
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Tune"));
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob3X, kTitlesY, kKnob3X+83, kKnobsY), &title, "Amount"));
-  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Glide"));
-
-  shiftCaption = new ICaptionControl(this, IRECT(kKnob1X, kKnobsY+70, kKnob1X+83, kKnobsY+80), kShift, &caption, true);
-  tuneCaption = new ICaptionControl(this, IRECT(kKnob2X, kKnobsY+70, kKnob2X+83, kKnobsY+80), kTune, &caption, true);
-  amountCaption = new ICaptionControl(this, IRECT(kKnob3X, kKnobsY+70, kKnob3X+83, kKnobsY+80), kAmount, &caption, true);
-  glideCaption = new ICaptionControl(this, IRECT(kKnob4X, kKnobsY+70, kKnob4X+83, kKnobsY+80), kGlide, &caption, true);
-  //pGraphics->AttachControl(shiftCaption);
-  //pGraphics->AttachControl(tuneCaption);
-  //pGraphics->AttachControl(amountCaption);
- // pGraphics->AttachControl(glideCaption);
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Fine Tune"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob3X, kTitlesY, kKnob3X+83, kKnobsY), &title, "Glide"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Amount"));
+  
   
   IText versionText = IText(12, &LIGHTER_GRAY, "Futura");
-  pGraphics->AttachControl(new ITextControl(this, IRECT(170, 312, 220, 320), &versionText, version));
-
+  pGraphics->AttachControl(new ITextControl(this, IRECT(170, 332, 220, 340), &versionText, version));
+  
   AttachGraphics(pGraphics);
   
   
-   //MakePreset("preset 1", ... );
-
+  //MakePreset("preset 1", ... );
+  
 }
 
 AutoTalentMD::~AutoTalentMD(){
@@ -297,40 +365,40 @@ void AutoTalentMD::ProcessDoubleReplacing(double** inputs, double** outputs, int
         for (ti=0; ti<12; ti++) {
           switch (ti) {
             case 0:
-              tf2 = fA;
+              tf2 = fNotes[9];
               break;
             case 1:
-              tf2 = fBb;
+              tf2 = fNotes[10];
               break;
             case 2:
-              tf2 = fB;
+              tf2 = fNotes[11];
               break;
             case 3:
-              tf2 = fC;
+              tf2 = fNotes[0];
               break;
             case 4:
-              tf2 = fDb;
+              tf2 = fNotes[1];
               break;
             case 5:
-              tf2 = fD;
+              tf2 = fNotes[2];
               break;
             case 6:
-              tf2 = fEb;
+              tf2 = fNotes[3];
               break;
             case 7:
-              tf2 = fE;
+              tf2 = fNotes[4];
               break;
             case 8:
-              tf2 = fF;
+              tf2 = fNotes[5];
               break;
             case 9:
-              tf2 = fGb;
+              tf2 = fNotes[6];
               break;
             case 10:
-              tf2 = fG;
+              tf2 = fNotes[7];
               break;
             case 11:
-              tf2 = fAb;
+              tf2 = fNotes[8];
               break;
           }
           /* 	  if (ti==ptarget) { */
@@ -481,7 +549,7 @@ void AutoTalentMD::ProcessDoubleReplacing(double** inputs, double** outputs, int
     // Mix (blend between original (delayed) =0 and shifted/corrected =1)
     *out1 = *out2 = (double) fMix*tf + (1-fMix)*cbi[(cbiwr - N + 1)%N];
   }
-
+  
 }
 
 
@@ -605,63 +673,76 @@ void AutoTalentMD::OnParamChange(int paramIdx)
   
   switch (paramIdx)
   {
+    case kRoot:
+      SetScale();
+      break;
+      
+    case kScale:
+      SetScale();
+      break;
+      
     case kMix:
       fMix = GetParam(kMix)->Value() / 100.;
       break;
     case kShift:
       fShift = GetParam(kShift)->Value();
-      shiftCaption->SetDirty(false);
       break;
     case kTune:
-      fTune = GetParam(kTune)->Value();
-      tuneCaption->SetDirty(false);
+      fTune = GetParam(kTune)->Value() / 100. ;
       break;
     case kAmount:
       fAmount = GetParam(kAmount)->Value() / 100.;
-      amountCaption->SetDirty(false);
       break;
     case kGlide:
       fGlide = GetParam(kGlide)->Value() / 1000.;
-      glideCaption->SetDirty(false);
       break;
     case kC:
-      fC = GetParam(kC)->Value() / 100.;
+      fNotes[0] = GetParam(kC)->Value() / 100.;
       break;
     case kDb:
-      fDb = GetParam(kDb)->Value() / 100.;
+      fNotes[1] = GetParam(kDb)->Value() / 100.;
       break;
     case kD:
-      fD = GetParam(kD)->Value() / 100.;
+      fNotes[2] = GetParam(kD)->Value() / 100.;
       break;
     case kEb:
-      fEb = GetParam(kEb)->Value() / 100.;
+      fNotes[3] = GetParam(kEb)->Value() / 100.;
       break;
     case kE:
-      fE = GetParam(kE)->Value() / 100.;
+      fNotes[4] = GetParam(kE)->Value() / 100.;
       break;
     case kF:
-      fF = GetParam(kF)->Value() / 100.;
+      fNotes[5] = GetParam(kF)->Value() / 100.;
       break;
     case kGb:
-      fGb = GetParam(kGb)->Value() / 100.;
+      fNotes[6] = GetParam(kGb)->Value() / 100.;
       break;
     case kG:
-      fG = GetParam(kG)->Value() / 100.;
+      fNotes[7] = GetParam(kG)->Value() / 100.;
       break;
     case kAb:
-      fAb = GetParam(kAb)->Value() / 100.;
+      fNotes[8] = GetParam(kAb)->Value() / 100.;
       break;
     case kA:
-      fA = GetParam(kA)->Value() / 100.;
+      fNotes[9] = GetParam(kA)->Value() / 100.;
       break;
     case kBb:
-      fBb = GetParam(kBb)->Value() / 100.;
+      fNotes[10] = GetParam(kBb)->Value() / 100.;
       break;
     case kB:
-      fB = GetParam(kB)->Value() / 100.;
+      fNotes[11] = GetParam(kB)->Value() / 100.;
       break;
     default:
       break;
   }
 }
 
+void AutoTalentMD::SetScale(){
+  int sc[12];
+  mScales.makeScale(GetParam(kRoot)->Value(), GetParam(kScale)->Value(), sc);
+  
+  for (int i = 0; i< 12; i++) {
+    Keys[i]->SetValueFromPlug(sc[i]);
+    Keys[i]->SetDirty(true);
+  }
+}
