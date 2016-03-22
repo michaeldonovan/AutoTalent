@@ -1,19 +1,19 @@
 #define PLUG_MFR "Michael Donovan"
-#define PLUG_NAME "AutoTalent-MD"
+#define PLUG_NAME "AutoTalent"
 
-#define PLUG_CLASS_NAME AutoTalentMD
+#define PLUG_CLASS_NAME AutoTalent
 
 #define BUNDLE_MFR "michaeldonovan"
-#define BUNDLE_NAME "AutoTalentMD"
+#define BUNDLE_NAME "AutoTalent"
 
-#define PLUG_ENTRY AutoTalentMD_Entry
-#define PLUG_VIEW_ENTRY AutoTalentMD_ViewEntry
+#define PLUG_ENTRY AutoTalent_Entry
+#define PLUG_VIEW_ENTRY AutoTalent_ViewEntry
 
-#define PLUG_ENTRY_STR "AutoTalentMD_Entry"
-#define PLUG_VIEW_ENTRY_STR "AutoTalentMD_ViewEntry"
+#define PLUG_ENTRY_STR "AutoTalent_Entry"
+#define PLUG_VIEW_ENTRY_STR "AutoTalent_ViewEntry"
 
-#define VIEW_CLASS AutoTalentMD_View
-#define VIEW_CLASS_STR "AutoTalentMD_View"
+#define VIEW_CLASS AutoTalent_View
+#define VIEW_CLASS_STR "AutoTalent_View"
 
 // Format        0xMAJR.MN.BG - in HEX! so version 10.1.5 would be 0x000A0105
 #define PLUG_VER 0x00000100
@@ -34,7 +34,7 @@
 #endif
 
 #define PLUG_MFR_PT "michaeldonovan\nmichaeldonovan\nAcme"
-#define PLUG_NAME_PT "AutoTalentMD\nIPEF"
+#define PLUG_NAME_PT "AutoTalent\nIPEF"
 #define PLUG_TYPE_PT "Effect"
 #define PLUG_DOES_AUDIOSUITE 1
 

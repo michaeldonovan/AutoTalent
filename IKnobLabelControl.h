@@ -1,6 +1,6 @@
 //
 //  IKnobLabelControl.h
-//  AutoTalentMD
+//  AutoTalent
 //
 //  Created by Michael on 3/21/16.
 //

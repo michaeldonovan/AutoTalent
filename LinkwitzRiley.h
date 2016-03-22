@@ -1,6 +1,6 @@
 //
 //  LinkwitzRiley.h
-//  AutoTalentMD
+//  AutoTalent
 //
 //  Created by Michael Donovan on 3/9/16.
 //  Original from T. Lossius - ttblue project
