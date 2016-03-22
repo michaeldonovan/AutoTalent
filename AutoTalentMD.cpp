@@ -24,7 +24,6 @@ enum EParams
   kA,
   kBb,
   kB,
-  kInfo,
   kScale,
   kRoot,
   kNumParams
@@ -82,8 +81,6 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   GetParam(kBb)->InitDouble("Bb", 100., 0., 100., 0.01, "%");
   GetParam(kB)->InitDouble("B", 100., 0., 100., 0.01, "%");
   
-  GetParam(kInfo)->InitBool("Info", false);
-  
   GetParam(kRoot)->InitEnum("Root", 0, 12);
   GetParam(kRoot)->SetDisplayText(0, "C");
   GetParam(kRoot)->SetDisplayText(1, "Db");
@@ -107,24 +104,18 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   GetParam(kScale)->SetDisplayText(5, "Lydian");
   GetParam(kScale)->SetDisplayText(6, "Phrygian");
   GetParam(kScale)->SetDisplayText(7, "Locrian");
-  GetParam(kScale)->SetDisplayText(8, "Harm Minor");
-  GetParam(kScale)->SetDisplayText(9, "Mel Minor");
-  GetParam(kScale)->SetDisplayText(10, "Maj Pentatonic");
-  GetParam(kScale)->SetDisplayText(11, "Min Pentatonic");
+  GetParam(kScale)->SetDisplayText(8, "Harmonic Minor");
+  GetParam(kScale)->SetDisplayText(9, "Melodic Minor");
+  GetParam(kScale)->SetDisplayText(10, "Major Pentatonic");
+  GetParam(kScale)->SetDisplayText(11, "Minor Pentatonic");
   GetParam(kScale)->SetDisplayText(12, "Minor Blues");
 
   GetParam(kScale)->SetIsMeta(true);
   GetParam(kRoot)->SetIsMeta(true);
   
-  mRootControl = new IPopUpMenuControl(this, IRECT(116, 137, 149, 155), LIGHT_GRAY, COLOR_WHITE,  kRoot);
-  
-  mScaleControl = new IPopUpMenuControl(this, IRECT(205, 137, 290, 155), LIGHT_GRAY, COLOR_WHITE, kScale);
-  
-  pGraphics->AttachControl(mRootControl);
-  pGraphics->AttachControl(mScaleControl);
+
   
   IBitmap Knob = pGraphics->LoadIBitmap(KNOB_ID, KNOB_FN, kKnobFrames);
-  IBitmap Info = pGraphics->LoadIBitmap(INFO_ID, INFO_FN);
   IBitmap KeyC = pGraphics->LoadIBitmap(KEYC_ID, KEYC_FN, 2);
   IBitmap KeyD = pGraphics->LoadIBitmap(KEYD_ID, KEYD_FN, 2);
   IBitmap KeyE = pGraphics->LoadIBitmap(KEYE_ID, KEYE_FN, 2);
@@ -153,12 +144,23 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   
   pGraphics->AttachBackground(BACKGROUND_ID, BACKGROUND_FN);
   
+  
   IText caption = IText(17, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  IText label = IText(17, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignNear);
   IText title = IText(20, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+
+  
+  mRootControl = new IPopUpMenuControl(this, IRECT(110, 140, 149, 155), LIGHT_GRAY, COLOR_WHITE, LIGHT_YELLOW, kRoot);
+  
+  mScaleControl = new IPopUpMenuControl(this, IRECT(197, 140, 300, 155), LIGHT_GRAY, COLOR_WHITE, LIGHT_YELLOW, kScale);
+  
+  pGraphics->AttachControl(mRootControl);
+  pGraphics->AttachControl(mScaleControl);
   
   
-  pGraphics->AttachControl(new ITextControl(this, IRECT(89, 137, 99, 154), &caption, "Root:"));
-  pGraphics->AttachControl(new ITextControl(this, IRECT(172, 137, 192, 154), &caption, "Scale:"));
+  
+  pGraphics->AttachControl(new ITextControl(this, IRECT(77, 141, 110, 154), &label, "Root:"));
+  pGraphics->AttachControl(new ITextControl(this, IRECT(160, 141, 197, 154), &label, "Scale:"));
   
   
   

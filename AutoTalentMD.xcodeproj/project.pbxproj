@@ -119,12 +119,6 @@
 		4CFEB6021CA074A900412D73 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FC1CA074A900412D73 /* Background.png */; };
 		4CFEB6031CA074A900412D73 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FC1CA074A900412D73 /* Background.png */; };
 		4CFEB6041CA074A900412D73 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FC1CA074A900412D73 /* Background.png */; };
-		4CFEB6051CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
-		4CFEB6061CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
-		4CFEB6071CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
-		4CFEB6081CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
-		4CFEB6091CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
-		4CFEB60A1CA074A900412D73 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FD1CA074A900412D73 /* Info.png */; };
 		4CFEB60B1CA074A900412D73 /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FE1CA074A900412D73 /* Knob.png */; };
 		4CFEB60C1CA074A900412D73 /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FE1CA074A900412D73 /* Knob.png */; };
 		4CFEB60D1CA074A900412D73 /* Knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CFEB5FE1CA074A900412D73 /* Knob.png */; };
@@ -567,7 +561,6 @@
 		4CED858E1C8E056C00B832EF /* fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fft.c; sourceTree = "<group>"; };
 		4CED858F1C8E056C00B832EF /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
 		4CFEB5FC1CA074A900412D73 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = resources/img/Background.png; sourceTree = "<group>"; };
-		4CFEB5FD1CA074A900412D73 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Info.png; path = resources/img/Info.png; sourceTree = "<group>"; };
 		4CFEB5FE1CA074A900412D73 /* Knob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Knob.png; path = resources/img/Knob.png; sourceTree = "<group>"; };
 		4CFEB6151CA0782C00412D73 /* fftsetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fftsetup.h; sourceTree = "<group>"; };
 		4CFEB6161CA0782C00412D73 /* mayer_fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mayer_fft.c; sourceTree = "<group>"; };
@@ -1418,7 +1411,6 @@
 			isa = PBXGroup;
 			children = (
 				4CFEB5FC1CA074A900412D73 /* Background.png */,
-				4CFEB5FD1CA074A900412D73 /* Info.png */,
 				4CFEB5FE1CA074A900412D73 /* Knob.png */,
 				4C20D4311CA1CD54003FBD86 /* BlackKey.png */,
 				4C20D4321CA1CD54003FBD86 /* Keyboard_01.png */,
@@ -1849,7 +1841,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C20D4561CA1CD54003FBD86 /* Keyboard_07.png in Resources */,
-				4CFEB6061CA074A900412D73 /* Info.png in Resources */,
 				4C20D43E1CA1CD54003FBD86 /* Keyboard_01.png in Resources */,
 				4C20D4421CA1CD54003FBD86 /* Keyboard_02.png in Resources */,
 				4C20D4461CA1CD54003FBD86 /* Keyboard_03.png in Resources */,
@@ -1867,7 +1858,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C20D4581CA1CD54003FBD86 /* Keyboard_07.png in Resources */,
-				4CFEB6081CA074A900412D73 /* Info.png in Resources */,
 				4C20D4401CA1CD54003FBD86 /* Keyboard_01.png in Resources */,
 				4C20D4441CA1CD54003FBD86 /* Keyboard_02.png in Resources */,
 				4C20D4481CA1CD54003FBD86 /* Keyboard_03.png in Resources */,
@@ -1885,7 +1875,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6031CA074A900412D73 /* Background.png in Resources */,
-				4CFEB6091CA074A900412D73 /* Info.png in Resources */,
 				4CFEB60F1CA074A900412D73 /* Knob.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1895,7 +1884,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C20D4571CA1CD54003FBD86 /* Keyboard_07.png in Resources */,
-				4CFEB6071CA074A900412D73 /* Info.png in Resources */,
 				4C20D43F1CA1CD54003FBD86 /* Keyboard_01.png in Resources */,
 				4C20D4431CA1CD54003FBD86 /* Keyboard_02.png in Resources */,
 				4C20D4471CA1CD54003FBD86 /* Keyboard_03.png in Resources */,
@@ -1913,7 +1901,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFEB6041CA074A900412D73 /* Background.png in Resources */,
-				4CFEB60A1CA074A900412D73 /* Info.png in Resources */,
 				4CFEB6101CA074A900412D73 /* Knob.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1925,7 +1912,6 @@
 				4C20D4491CA1CD54003FBD86 /* Keyboard_04.png in Resources */,
 				4CFEB5FF1CA074A900412D73 /* Background.png in Resources */,
 				4CFEB60B1CA074A900412D73 /* Knob.png in Resources */,
-				4CFEB6051CA074A900412D73 /* Info.png in Resources */,
 				4C20D43D1CA1CD54003FBD86 /* Keyboard_01.png in Resources */,
 				4C20D4551CA1CD54003FBD86 /* Keyboard_07.png in Resources */,
 				4C20D4391CA1CD54003FBD86 /* BlackKey.png in Resources */,

@@ -6,12 +6,13 @@
 class IPopUpMenuControl : public IControl
 {
 public:
-    IPopUpMenuControl(IPlugBase *pPlug, IRECT pR, IColor cBG, IColor cFG , int paramIdx)
+    IPopUpMenuControl(IPlugBase *pPlug, IRECT pR, IColor cBG, IColor cFG, IColor textColor , int paramIdx)
     : IControl(pPlug, pR, paramIdx)
     {
         mDisablePrompt = false;
         mDblAsSingleClick = true;
-        mText = IText(14,&COLOR_WHITE,"Futura");
+        mColorText = textColor;
+        mText = IText(17,&mColorText,"Futura", IText::kStyleNormal, IText::kAlignNear);
         mColor = cBG;
         mColorFG = cFG;
         textRect= IRECT(pR.L+8, pR.T+1, pR.R, pR.B);
@@ -24,15 +25,15 @@ public:
         if(IsGrayed()){
             blend.mMethod=blend.kBlendColorDodge;
             blend.mWeight=.8;
-            mText = IText(14,&COLOR_GRAY,"Futura");
+            mText = IText(17,&COLOR_GRAY,"Futura", IText::kStyleNormal, IText::kAlignNear);
         }
         else{
-            mText = IText(14,&COLOR_WHITE,"Futura");
+            mText = IText(17,&mColorText,"Futura", IText::kStyleNormal, IText::kAlignNear);
             blend = IChannelBlend();
         }
 
-        pGraphics->FillIRect(&mColor, &mRECT, &blend);
-        pGraphics->FillTriangle(&COLOR_GRAY, mRECT.L+4, mRECT.T+4, mRECT.L+4, mRECT.B-4, mRECT.L+8, (mRECT.T + mRECT.H()/2 ), &blend);
+        //pGraphics->FillIRect(&mColor, &mRECT, &blend);
+        //pGraphics->FillTriangle(&COLOR_GRAY, mRECT.L+4, mRECT.T+4, mRECT.L+4, mRECT.B-4, mRECT.L+8, (mRECT.T + mRECT.H()/2 ), &blend);
         char disp[32];
         mPlug->GetParam(mParamIdx)->GetDisplayForHost(disp);
         
@@ -57,6 +58,7 @@ public:
 private:
     IColor mColor;
     IColor mColorFG;
+    IColor mColorText;
     IRECT textRect;
 };
 
