@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${BINARY_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>1.0.0, Copyright michaeldonovan, 2016</string>
+	<string>0.1.0, Copyright michaeldonovan, 2016</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.michaeldonovan.vst3.${BINARY_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>0.1.0</string>
 	<key>CFBundleSignature</key>
 	<string>Acme</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>0.1.0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.5.0</string>
 </dict>

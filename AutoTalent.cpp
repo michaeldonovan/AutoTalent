@@ -145,9 +145,9 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   pGraphics->AttachBackground(BACKGROUND_ID, BACKGROUND_FN);
   
   
-  IText caption = IText(17, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
-  IText label = IText(17, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignNear);
-  IText title = IText(20, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  IText caption = IText(14, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
+  IText label = IText(14, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignNear);
+  IText title = IText(16, &COLOR_WHITE, "Futura", IText::kStyleNormal, IText::kAlignCenter);
 
   
   mRootControl = new IPopUpMenuControl(this, IRECT(110, 140, 149, 155), LIGHT_GRAY, COLOR_WHITE, LIGHT_YELLOW, kRoot);
@@ -180,7 +180,7 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Amount"));
   
   
-  IText versionText = IText(13, &LIGHTER_GRAY, "Futura", IText::kStyleNormal, IText::kAlignNear);
+  IText versionText = IText(10, &LIGHTER_GRAY, "Futura", IText::kStyleNormal, IText::kAlignNear);
   pGraphics->AttachControl(new ITextControl(this, IRECT(178, 330, 220, 340), &versionText, version));
   
   AttachGraphics(pGraphics);
