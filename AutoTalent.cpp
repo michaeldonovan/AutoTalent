@@ -168,11 +168,10 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob2X, kKnobsY, kTune, &Knob));
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob3X, kKnobsY, kAmount, &Knob));
   //pGraphics->AttachControl(new IKnobMultiControl(this, kKnob4X, kKnobsY, kGlide, &Knob));
-  
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob1X, kKnobsY, kKnob1X+83, kKnobsY+90), kShift, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob2X, kKnobsY, kKnob2X+83, kKnobsY+90), kTune, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob3X, kKnobsY, kKnob3X+83, kKnobsY+90), kGlide, &Knob, &caption, true));
-  pGraphics->AttachControl(new IKnobMultiControlText(this, IRECT(kKnob4X, kKnobsY, kKnob4X+83, kKnobsY+90), kAmount, &Knob, &caption, true));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, kKnob1X, kKnobsY, kShift, &Knob, &caption));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, kKnob2X, kKnobsY, kTune, &Knob, &caption));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, kKnob3X, kKnobsY, kGlide, &Knob, &caption));
+  pGraphics->AttachControl(new IKnobMultiControlText(this, kKnob4X, kKnobsY, kAmount, &Knob, &caption));
   
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob1X, kTitlesY, kKnob1X+83, kKnobsY), &title, "Transpose"));
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob2X, kTitlesY, kKnob2X+83, kKnobsY), &title, "Fine Tune"));

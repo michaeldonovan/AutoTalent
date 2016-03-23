@@ -2405,6 +2405,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "resources/AutoTalent-VST2-Info.plist";
+				SDKROOT = macosx10.5;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2415,11 +2416,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = "$(VST_FOLDER)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(RELEASE_DEFS)",
+					IPLUG_RETINA_SUPPORT,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"$(VST_DEFS)",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "resources/AutoTalent-VST2-Info.plist";
+				SDKROOT = macosx10.5;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2435,6 +2441,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "resources/AutoTalent-VST2-Info.plist";
+				SDKROOT = macosx10.5;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2484,6 +2491,7 @@
 					/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers,
 					$CA_SDK/AudioUnits/AUPublic/AUBase,
 				);
+				SDKROOT = macosx10.5;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = component;
 			};
