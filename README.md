@@ -6,7 +6,7 @@ Based on Oli Larkin's [port](https://github.com/olilarkin/autotalent) of Tom Bar
 
 Built using the [WDL-OL framework](https://github.com/olilarkin/wdl-ol)
 
-[**DOWNLOAD**](https://raw.githubusercontent.com/michaeldonovan/AutoTalent/master/installer/build-mac/AutoTalent.0.1.0.zip)
+[**DOWNLOAD**](https://raw.githubusercontent.com/michaeldonovan/AutoTalent/master/installer/build-mac/AutoTalent.zip)
 
 AutoTalent is licensed under [GPL2.](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) The included FFT routines are licensed under the [Pure Data license.](http://puredata.info/about/pdlicense/)
 
