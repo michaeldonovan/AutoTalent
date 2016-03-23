@@ -2,10 +2,7 @@
 #define __AUTOTALENT__
 
 #include "IPlug_include_in_plug_hdr.h"
-#include "CParamSmooth.h"
 #include "IPopupMenuControl.h"
-#include "PeakFollower.h"
-#include "IKnobLabelControl.h"
 #include "mayer_fft.c"
 #include "fftsetup.h"
 #include "IKnobMultiControlText.h"

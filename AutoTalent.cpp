@@ -180,8 +180,8 @@ IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
   pGraphics->AttachControl(new ITextControl(this, IRECT(kKnob4X, kTitlesY, kKnob4X+83, kKnobsY), &title, "Amount"));
   
   
-  IText versionText = IText(12, &LIGHTER_GRAY, "Futura");
-  pGraphics->AttachControl(new ITextControl(this, IRECT(170, 332, 220, 340), &versionText, version));
+  IText versionText = IText(13, &LIGHTER_GRAY, "Futura", IText::kStyleNormal, IText::kAlignNear);
+  pGraphics->AttachControl(new ITextControl(this, IRECT(178, 330, 220, 340), &versionText, version));
   
   AttachGraphics(pGraphics);
   

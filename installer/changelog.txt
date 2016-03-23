@@ -1,3 +1,3 @@
-MultiBandDistortion changelog
+AutoTalent changelog
 
-03/14/16 - v1.00 initial release
+03/22/16 - v0.1.0 initial release

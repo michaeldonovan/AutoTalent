@@ -2,12 +2,8 @@
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-dlg.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-gdi.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-ini.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/fft.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/DSPUtilities.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-kb.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/PeakFollower.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-miscdlg.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/VAStateVariableFilter.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-menu.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-misc.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swell-wnd.o
@@ -15,7 +11,6 @@
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/swellappmain.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/RtAudio.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/RtMidi.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/besselfilter.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/IPlugStandalone.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/IPlugBase.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/IPlugStructs.o
@@ -31,6 +26,5 @@
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/AutoTalent.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/app_main.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/app_dialog.o
-/Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/CParamSmooth.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/main.o
 /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/build-mac/AutoTalent.build/Debug/APP.build/Objects-normal/x86_64/IBitmapMonoText.o

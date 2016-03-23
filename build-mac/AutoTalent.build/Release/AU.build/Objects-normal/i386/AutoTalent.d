@@ -28,10 +28,7 @@ dependencies: \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/../../WDL/IPlug/IGraphics.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/../../WDL/IPlug/IPopupMenu.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/../../WDL/IPlug/IControl.h \
-  /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/CParamSmooth.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/IPopupMenuControl.h \
-  /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/PeakFollower.h \
-  /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/IKnobLabelControl.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/mayer_fft.c \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/fftsetup.h \
   /Users/michael/PluginDev/wdl-ol-michaeldonovan/Dev/AutoTalent/mayer_fft.h \
