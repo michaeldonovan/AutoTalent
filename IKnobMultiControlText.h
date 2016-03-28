@@ -1,25 +1,23 @@
 //
-//  IKnobMultiControlText.h
-//  AutoTalent
+//  IKnobMultiControlCaption.h
 //
-//  Created by Michael on 3/21/16.
 //
 //
 
-#ifndef IKnobMultiControlText_h
-#define IKnobMultiControlText_h
+#ifndef IKnobMultiControlCaption_h
+#define IKnobMultiControlCaption_h
 
 #include "IControl.h"
 #include <string>
 
-class IKnobMultiControlText : public IKnobControl
+class IKnobMultiControlCaption : public IKnobControl
 {
 private:
     IRECT mTextRECT, mImgRECT;
     IBitmap mBitmap;
     bool mShowParamLabel;
 public:
-    IKnobMultiControlText(IPlugBase* pPlug, IRECT pR, int paramIdx, IBitmap* pBitmap, IText* pText, bool showParamLabel)
+    IKnobMultiControlCaption(IPlugBase* pPlug, IRECT pR, int paramIdx, IBitmap* pBitmap, IText* pText, bool showParamLabel)
     : IKnobControl(pPlug, pR, paramIdx), mBitmap(*pBitmap), mShowParamLabel(showParamLabel)
     {
         mText = *pText;
@@ -28,7 +26,7 @@ public:
         mDisablePrompt = false;
     }
     
-    ~IKnobMultiControlText() {}
+    ~IKnobMultiControlCaption() {}
     
     bool Draw(IGraphics* pGraphics)
     {
@@ -90,4 +88,4 @@ public:
 };
 
 
-#endif /* IKnobMultiControlText_h */
+#endif /* IKnobMultiControlCaption_h */
